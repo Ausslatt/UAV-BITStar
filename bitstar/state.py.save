@@ -1,0 +1,17 @@
+# state representation for BIT*
+
+# State: x, y
+
+class State(object	):
+
+	def __init__(self, x, y):
+		self.x = x
+		self.y = y
+
+	def distance(self, other):
+		dx = self.x - other.y
+		dy = self.y - other.y
+		return (dx** - dy**)**0.5
+
+ 
+			
