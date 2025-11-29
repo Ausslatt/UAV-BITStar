@@ -12,13 +12,5 @@ class State(object):
         """Return (x, y) for printing or logging."""
         return (self.x, self.y)
 
-    def __repr__(self):
-        return "State(x=%s, y=%s)" % (self.x, self.y)
 
-
-def distance(a, b):
-    """Euclidean distance between two states."""
-    dx = a.x - b.x
-    dy = a.y - b.y
-    return math.sqrt(dx * dx + dy * dy)
 
