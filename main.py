@@ -1,14 +1,8 @@
-from bitstar.state import State, distance
-from bitstar.graph import Vertex, Edge, Graph
+from bitstar.bit_star import Vertex, bit_star, Tree
 
-
-
-from bitstar.env import Environment2d
-
-env = Environment2d(0, 10, 0, 10)
-
-print(env.is_free(5, 5))        # should be True
-print(env.is_free(-1, 5))       # should be False
-print(env.is_free(11, 5))       # should be False
-print(env.line_is_free((1,1), (9,9)))   # should be True
-print(env.line_is_free((-1,1), (2,2)))  # should be False
+start = Vertex(5.0, 5.0)
+goal = Vertex(80.0, 80.0)
+tree = Tree(start, goal, radius=3.0)
+bit_star_planner = bit_star(tree, n_iters=100, sample_size=200)
+path = bit_star_planner.planning()
+print("Planned path:", path)
